@@ -69,7 +69,7 @@ export class QuizListComponent implements OnInit, OnDestroy {
   createForm(data: Questions[]): void {
     const questions = this.quizForm.get('questions') as FormArray;
       data.forEach(question => {
-        questions.push(this.createQuizQuestion(question))
+        questions.push(this.createQuizQuestion(question));
       });
   }
 
