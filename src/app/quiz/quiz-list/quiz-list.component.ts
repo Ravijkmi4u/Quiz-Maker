@@ -3,7 +3,7 @@ import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription, map, switchMap } from 'rxjs';
 import { constants } from 'src/app/constants/constant';
-import { PayloadRequest, Questions } from 'src/app/models/quiz.model';
+import { Questions } from 'src/app/models/quiz.model';
 import { QuizService } from 'src/app/services/quiz.service';
 
 @Component({
