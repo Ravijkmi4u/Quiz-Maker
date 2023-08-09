@@ -1,0 +1,15 @@
+<div class="form-filter-container">
+    <div class="filter-section-container">
+        <form [formGroup]="form">
+            <select id="categorySelect" name="category" formControlName="category">
+                <option value="" disabled>Select a category</option>
+                <option *ngFor="let category of categories$ | async" [value]="category.id">{{category.name | titlecase}}</option>
+            </select>
+            <select id="difficultySelect" name="difficulty" formControlName="difficulty">
+                <option value="" disabled>Select difficulty</option>
+                <option *ngFor="let difficulty of difficultyLevels" [value]="difficulty">{{difficulty | titlecase}}</option>
+            </select>
+            <button id="createBtn" [disabled]="form.invalid" (click)="createQuiz()">Create</button>
+        </form>
+    </div>
+</div>

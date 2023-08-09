@@ -1,0 +1,49 @@
+.quiz-container {
+  width: 900px;
+  margin: 0 auto;
+  justify-content: start;
+}
+
+.green {
+  background-color: #008000;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  li {
+    margin: 5px;
+    button {
+      background-color: transparent;
+      border: 1px solid #008000;
+      padding: 5px;
+      border-radius: 5px;
+      color: #008000;
+      cursor: pointer;
+      &:hover {
+        background-color: #008000;
+        color: white;
+      }
+      &.green {
+        background-color: #008000;
+        color: white;
+      }
+      &.red {
+        background-color: #ff0000;
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+.red-banner {
+  background-color: #ff0000;
+  display: flex;
+  text-align: center;
+}
+
+.heading-elm {
+  display: flex;
+  justify-content: center;
+}

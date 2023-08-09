@@ -1,0 +1,21 @@
+<app-quiz-list
+  [quizeFinished]="true"
+  [quizData]="quizList$ | async"
+></app-quiz-list>
+<div class="container" *ngIf="totalQuestion.length">
+  <div class="result-message">
+    <span
+      [style.backgroundColor]="
+        scoreBoard <= 1
+          ? 'red'
+          : scoreBoard > 1 && scoreBoard < 4
+          ? 'yellow'
+          : 'green'
+      "
+      >Your scored {{ scoreBoard }} out of {{ totalQuestion.length }}</span
+    >
+  </div>
+  <div class="action-panel">
+    <a routerLink="/quiz">Create new quiz</a>
+  </div>
+</div>

@@ -1,0 +1,53 @@
+<h2 class="heading-elm">{{!quizeFinished ? 'Quiz Maker' : 'Result' | uppercase}}</h2>
+<ng-container *ngIf="!quizeFinished">
+  <app-quiz-filter></app-quiz-filter>
+</ng-container>
+<div class="quiz-container">
+  <form [formGroup]="quizForm" *ngIf="!loading; else loader">
+    <div
+      formArrayName="questions"
+      *ngFor="let quizOption of questionFormArrayContols.controls; let i = index"
+    >
+      <div [formGroupName]="i">
+        <label [innerHtml]="quizOption.value.question"></label>
+        <ul>
+          <li  *ngFor="let option of quizOption.value?.listOfOptions">
+            <button [innerHtml]="option"
+              [disabled]="quizeFinished"
+              [ngClass]="{
+                green: !quizeFinished
+                  ? quizOption.value.selectedAnswer &&
+                    quizOption.value.selectedAnswer === option
+                  : quizOption.value.correctAnswer === option,
+                red:
+                  quizOption.value.selectedAnswer === option &&
+                  quizOption.value.correctAnswer !==
+                    quizOption.value.selectedAnswer &&
+                  quizeFinished
+              }"
+              (click)="selecteQuizOption(option, i)"
+            >
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="action-panel">
+      <button
+        *ngIf="
+          questionFormArrayContols.controls.length &&
+          quizForm.valid &&
+          !quizeFinished
+        "
+        (click)="finisheQuiz()"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+</div>
+
+
+<ng-template #loader>
+  <app-loader></app-loader>
+</ng-template>

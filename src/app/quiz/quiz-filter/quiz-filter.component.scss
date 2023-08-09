@@ -1,0 +1,35 @@
+.form-filter-container {
+    justify-content: center;
+    margin-bottom: 20px;
+} 
+
+.filter-section-container {
+    display: flex;
+    justify-content: center;
+}
+
+#categorySelect {
+    width: 240px;
+    margin: 10px;
+    height: 25px;
+    border-radius: 5px;
+}
+
+#difficultySelect {
+    height: 25px;
+    border-radius: 5px;
+}
+
+#createBtn {
+    margin-left: 10px;
+    padding: 4px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #24a0ed;
+    border: 1px solid #1598e9;
+    color: #ffffff;
+    &:disabled {
+        opacity: 0.5;
+        cursor: default;
+    }
+}
