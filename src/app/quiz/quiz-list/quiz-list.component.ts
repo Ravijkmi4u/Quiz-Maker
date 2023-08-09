@@ -58,7 +58,6 @@ export class QuizListComponent implements OnInit, OnDestroy {
   }
 
   fetchQuizList(data: Questions[]): void {
-    (this.quizForm.get("questions") as FormArray).clear();
     this.createForm(data);
     this.loading = false;
   }
